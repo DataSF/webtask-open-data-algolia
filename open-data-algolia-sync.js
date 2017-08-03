@@ -1,7 +1,6 @@
 var algoliasearch = require('algoliasearch')
 var request = require('request-promise')
 
-
 module.exports = function(ctx, cb) {
   var client = algoliasearch(ctx.data.ALGOLIA_ID, ctx.data.ALGOLIA_SECRET)
   var index = client.initIndex(ctx.data.ALGOLIA_INDEX)
