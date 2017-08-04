@@ -63,7 +63,8 @@ module.exports = function(ctx, cb) {
           visits: parseInt(d.visits, 10),
           publishingFrequency: d.publishing_frequency,
           publishing_dept: d.department,
-          fieldTypes: fieldTypes
+          fieldTypes: fieldTypes,
+          record_count: parseInt(d.record_count, 10)
         } 
         
         objects.push(object)
