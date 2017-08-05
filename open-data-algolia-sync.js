@@ -66,6 +66,7 @@ module.exports = function(ctx, cb) {
         d.licenseLink = "https://opendatacommons.org/licenses/pddl/1.0/"
         d.fieldTypes = fieldTypes
         d.keywords = keywords
+        d.name = d.dataset_name
         
         objects.push(d)
       }
