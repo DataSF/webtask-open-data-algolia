@@ -47,7 +47,7 @@ module.exports = function(ctx, cb) {
       for (var i = 0, size = datasets.length; i < size; i++) {
         var d = datasets[i]
         var fieldTypes = humanFieldTypes.filter(matchFilter(d))
-        var tags = typeof d.keywords !== 'undefined' ? d.keywords.split(',') : null
+        var keywords = typeof d.keywords !== 'undefined' ? d.keywords.split(',') : null
         
         d.objectID = d.datasetid
         d.dataId = d.nbeid
@@ -65,6 +65,7 @@ module.exports = function(ctx, cb) {
         d.licenseName = "Open Data Commons Public Domain Dedication and License"
         d.licenseLink = "https://opendatacommons.org/licenses/pddl/1.0/"
         d.fieldTypes = fieldTypes
+        d.keywords = keywords
         
         objects.push(d)
       }
