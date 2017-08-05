@@ -49,26 +49,24 @@ module.exports = function(ctx, cb) {
         var fieldTypes = humanFieldTypes.filter(matchFilter(d))
         var tags = typeof d.keywords !== 'undefined' ? d.keywords.split(',') : null
         
-        object = {
-          objectID: d.datasetid,
-          systemID: d.datasetid,
-          name: d.dataset_name,
-          description: d.description,
-          createdAt: Date.parse(d.created_date) / 1000,
-          rowsUpdatedAt: Date.parse(d.last_updt_dt_data) / 1000,
-          category: d.category,
-          tags: tags,
-          keywords: tags,
-          downloads: parseInt(d.downloads, 10),
-          visits: parseInt(d.visits, 10),
-          publishingFrequency: d.publishing_frequency,
-          publishing_dept: d.department,
-          fieldTypes: fieldTypes,
-          record_count: parseInt(d.record_count, 10),
-          publishing_health: d.publishing_health
-        } 
+        d.objectID = d.datasetid
+        d.dataId = d.nbeid
+        d.id = d.datasetid
+        d.publishingDepartment = d.department
+        d.createdAt = Date.parse(d.created_date) / 1000
+        d.rowsUpdatedAt = Date.parse(d.last_updt_dt_data) / 1000
+        d.visits = parseInt(d.visits, 10)
+        d.downloads = parseInt(d.downloads, 10)
+        d.rowCount = parseInt(d.record_count, 10)
+        d.rowLabel = d.rowlabel
+        d.rowIdentifier = d.rowidentifier
+        d.dataChangeFrequency = d.data_change_frequency
+        d.publishingFrequency = d.publishing_frequency
+        d.licenseName = "Open Data Commons Public Domain Dedication and License"
+        d.licenseLink = "https://opendatacommons.org/licenses/pddl/1.0/"
+        d.fieldTypes = fieldTypes
         
-        objects.push(object)
+        objects.push(d)
       }
       
       index.clearIndex(function(err, content){
