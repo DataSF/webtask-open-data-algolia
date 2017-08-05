@@ -67,7 +67,7 @@ module.exports = function(ctx, cb) {
         d.fieldTypes = fieldTypes
         d.keywords = keywords
         d.name = d.dataset_name
-        d.systemID = d.systemID
+        d.systemId = d.systemID
         
         objects.push(d)
       }
