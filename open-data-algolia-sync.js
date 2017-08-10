@@ -38,7 +38,7 @@ module.exports = function(ctx, cb) {
     }
   }
 
-  request({uri: 'https://data.sfgov.org/resource/8ez2-fksg.json?$limit=5000', json: true})
+  request({uri: 'https://data.sfgov.org/resource/w6q6-i3uv.json?$limit=5000', json: true})
     .then(function(datasets) {
       var objects = []
       var object = {}
