@@ -69,6 +69,7 @@ module.exports = function(ctx, cb) {
         d.keywords = keywords
         d.name = d.dataset_name
         d.systemID = d.datasetid
+        d.documented_percentage = Number(parseFloat(d.documented_percentage) / 100).toString()
         
         objects.push(d)
       }
