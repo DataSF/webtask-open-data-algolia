@@ -70,6 +70,7 @@ module.exports = function(ctx, cb) {
         d.name = d.dataset_name
         d.systemID = d.datasetid
         d.documented_percentage = Number(parseFloat(d.documented_percentage) / 100).toString()
+        d.dupe_record_percent = Number(parseFloat(d.dupe_record_percent) / 100).toString()
         
         objects.push(d)
       }
